@@ -1,5 +1,5 @@
 #!/bin/bash
-source ~/.bashrc
+binary=`cat /root/binary.txt`
 txt="/root/bot/tmp/parameters.txt"
 slash="/root/bot/tmp/slash.json"
 stake="/root/bot/tmp/stake.txt"
