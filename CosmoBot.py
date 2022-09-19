@@ -2,7 +2,7 @@ import telebot
 from telebot import types
 import os
 import subprocess
-TOKEN = os.getenv("TOKEN")
+TOKEN = open('/root/bot/TOKEN.txt', 'w')
 bot = telebot.TeleBot("TOKEN")
 binary = os.getenv("binary")
 @bot.message_handler(commands=['start'])
