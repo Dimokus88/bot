@@ -18,7 +18,6 @@ cat $stake | grep bond_denom | sed "s/_/ /" | sed "s/b/B/" >> $txt
 cat $stake | grep historical_entries | sed "s/_/ /" | sed "s/h/H/" >> $txt
 cat $stake | grep max_entries | sed "s/_/ /" | sed "s/m/M/" >> $txt
 cat $stake | grep max_validators | sed "s/_/ /" | sed "s/m/M/" >> $txt
-cat $stake | grep max_validators | sed "s/_/ /" | sed "s/m/M/" >> $txt
 let unbonding_time=`$binary query staking params --node "$SNAP_RPC" -o json | jq -r .unbonding_time | sed "s/s//"`/60/60/24
 echo "Unbonding time: $unbonding_time days" >> $txt
 echo  >> $txt
