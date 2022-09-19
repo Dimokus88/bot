@@ -2,7 +2,8 @@ import telebot
 from telebot import types
 import os
 import subprocess
-bot = telebot.TeleBot("$TOKEN")
+TOKEN = os.getenv("TOKEN")
+bot = telebot.TeleBot("TOKEN")
 binary = os.getenv("binary")
 @bot.message_handler(commands=['start'])
 def start_message(message):
