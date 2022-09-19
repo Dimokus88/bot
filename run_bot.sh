@@ -4,7 +4,7 @@ apt install -y python3 pip bc
 pip install pyTelegramBotAPI
 sleep 10
 mkdir /root/bot/tmp/
-/root/bot/parameters.sh
+/root/bot/parameters.sh $binary
 mkdir /root/bot/log
 sleep 5  
 cat > /root/bot/run <<EOF 
