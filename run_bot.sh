@@ -1,6 +1,5 @@
 #!/bin/bash
 binary=$1
-source ~/.bashrc
 apt install -y python3 pip bc
 pip install pyTelegramBotAPI
 sleep 10
