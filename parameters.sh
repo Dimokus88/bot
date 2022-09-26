@@ -1,5 +1,4 @@
 #!/bin/bash
-binary=$1
 txt="/root/bot/tmp/parameters.txt"
 slash="/root/bot/tmp/slash.json"
 stake="/root/bot/tmp/stake.txt"
