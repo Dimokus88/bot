@@ -3,7 +3,7 @@ from telebot import types
 import os
 import subprocess
 TOKEN = os.getenv("TOKEN")
-bot = telebot.TeleBot("5552659167:AAHtE97nt20Q76N9CErBBl9eWtPOk9_FT84")
+bot = telebot.TeleBot("TOKEN")
 binary = os.getenv("binary")
 @bot.message_handler(commands=['start'])
 def start_message(message):
