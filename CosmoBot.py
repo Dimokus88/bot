@@ -3,7 +3,7 @@ from telebot import types
 import os
 import subprocess
 TOKEN = os.getenv("TOKEN")
-bot = telebot.TeleBot("TOKEN")
+bot = telebot.TeleBot("5552659167:AAHtE97nt20Q76N9CErBBl9eWtPOk9_FT84")
 binary = os.getenv("binary")
 @bot.message_handler(commands=['start'])
 def start_message(message):
@@ -16,6 +16,9 @@ def start_message(message):
 @bot.message_handler(content_types=['text'])
 def start_message(message):
   if message.text == "Main menu":
+     file = open('/root/bot/CHAT_ID.txt', 'w')
+     file.write(str(message.chat.id))
+     file.close()
 #     bot.delete_message(message.chat.id, message_id=message.message_id)
      markup=types.ReplyKeyboardMarkup(resize_keyboard=True)
      item1=types.KeyboardButton("Status")
@@ -65,6 +68,24 @@ def start_message(message):
      text = open ('/root/bot/tmp/parameters.txt')
      bot.send_message(message.chat.id,text.read())
 
+  if message.text == "Governance":
+     markup=types.ReplyKeyboardMarkup(resize_keyboard=True)
+     item1=types.KeyboardButton("Actual proposal")
+     item2=types.KeyboardButton("Vote")
+     item3=types.KeyboardButton("Main menu")
+     markup.add(item1,item2)
+     markup.add(item3)
+     text = bot.send_message(message.chat.id,"Select section",reply_markup=markup)
+     bot.register_next_step_handler(text,prop) 
+
+def prop(message):
+     markup=types.ReplyKeyboardMarkup(resize_keyboard=True)
+     item1=types.KeyboardButton("Main menu")
+     item2=types.KeyboardButton("Vote")
+     subprocess.check_call("/root/bot/cheker/cheker_list.sh '%s'" % binary , shell=True)
+     text = open ('/root/bot/cheker/message.txt')
+     markup.add(item1,item2)
+     bot.send_message(message.chat.id,text.read(),reply_markup=markup)
 
 def explorer(message):
      markup=types.ReplyKeyboardMarkup(resize_keyboard=True)
@@ -91,5 +112,4 @@ def hash(message):
     markup.add(item1)
     bot.send_message(message.chat.id,text.read(),reply_markup=markup)
 
-bot.infinity_polling()
-
+bot.infinity_polling(
