@@ -1,8 +1,11 @@
 #!/bin/bash
 binary=$1
 RPC=`cat /root/bot/RPC.txt`
-text=/root/bot/cheker/message1.txt
-echo Avaliable proposals: > $text
+text=/root/bot/cheker/message.txt
+rm $text
+echo "Avaliable proposals:" > $text
+pr=`$binary q gov proposals --status VotingPeriod --node $RPC -o json`
+echo $pr > /root/bot/tmp/proposal.json
 count=0
 id=`cat /root/bot/tmp/proposal.json | jq -r .proposals[$count].proposal_id`
 
@@ -20,3 +23,12 @@ echo  >> $text
 let count=$count+1
 id=`cat /root/bot/tmp/proposal.json | jq -r .proposals[$count].proposal_id`
 done
+m=`cat $text`
+
+if grep $text id
+then
+exit
+
+else
+echo "Actual proposal not found!" >> $text 
+fi
