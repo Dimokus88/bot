@@ -112,4 +112,4 @@ def hash(message):
     markup.add(item1)
     bot.send_message(message.chat.id,text.read(),reply_markup=markup)
 
-bot.infinity_polling(
+bot.infinity_polling()
