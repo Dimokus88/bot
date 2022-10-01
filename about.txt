@@ -1,0 +1,23 @@
+Hello!
+
+I can show the status of the node, the current load on the server, the parameters of the blockchain and a simple network explorer.
+
+This is an alpha version of the bot, so there may be errors in the process.
+Please, if you encounter errors, write to the telegram chats https://t.me/AkashNW (for English-speaking users) or https://t.me/akash_ru (for Russian-speaking users).
+
+Creator:
+Telegram https://t.me/Dimokus
+GitHub https://github.com/Dimokus88/
+
+Support us!
+AKT akash15kftczv68kywyd0vx57wdhwwzg60s3qn3fl34a
+ETH 0xD08C659fF3DD69DED970dF080D6427c057438868
+BTC bc1q0xk5rh5pasz9ecxpvwdr8empgvg54hv5su8533
+
+Created specifically for nodes deployed on the Akash Network!
+
+Twitter: https://twitter.com/akashnet_
+Discord: https://discord.gg/j5hYPk2XqA
+Reddit: https://www.reddit.com/r/akashnetwork/
+Website: https://akash.network/en/
+Github: https://github.com/ovrclk
